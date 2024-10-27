@@ -7,13 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:background="@color/color_toolbar"
+        app:title="Индекс массы тела"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/layout_fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMain"
+        app:layout_constraintVertical_bias="0.3">
+
+        <EditText
+            android:id="@+id/heightEditTextET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_height"
+            android:textSize="24dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="12dp"/>
+
+        <EditText
+            android:id="@+id/weightEditTextET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_weight"
+            android:textSize="24dp"
+            android:paddingRight="24dp"
+            android:paddingLeft="12dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calculatedBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_calculate_btn"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_fields" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
